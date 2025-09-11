@@ -1,2 +1,2 @@
 # DSA
-DSA from start ot end in Java
+DSA from start to end in Java
