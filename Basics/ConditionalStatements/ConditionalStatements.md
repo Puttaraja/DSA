@@ -5,7 +5,7 @@ They help in **decision making** by executing different blocks of code depending
 
 ---
 
-## 1️⃣ if Statement
+### 1️⃣ if Statement
 - Used for **single condition check**.
 - Executes the block of code **only if the condition is true**.
 
