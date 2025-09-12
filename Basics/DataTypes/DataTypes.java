@@ -4,7 +4,7 @@ public class DataTypes {
     
     public static void main(String[] args){
 
-        // Primary data types in Java
+        // Primitve data types in Java
         byte byteVar = 8;
         short shortVar = 16;
         char charVar = 'A';
