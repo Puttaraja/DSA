@@ -32,13 +32,13 @@ arr = new int[5];  // Creates an array of size 5 (all elements default to 0)
 - false for boolean
 - null for objects
 
-### Features
+### 🔹 Features
 
 - Supports both primitive and object references.
 - Fast random access using indices.
 - Can be multi-dimensional (arrays of arrays).
 
-### Limitations
+### 🔹 Limitations
 
 - Fixed size → cannot grow/shrink dynamically.
 - No built-in bounds checking beyond runtime exception.
@@ -52,8 +52,8 @@ arr = new int[5];  // Creates an array of size 5 (all elements default to 0)
 -No need to manually track length (use .size() instead).
 
 ### Tips
-⚡ constant-time random access and dynamic resizing, use ArrayList.
-⚡ fixed size and efficiency, stick with arrays.
+- ⚡ constant-time random access and dynamic resizing, use ArrayList.
+- ⚡ fixed size and efficiency, stick with arrays.
 
 ### ✅ Key Points using Collections
 
