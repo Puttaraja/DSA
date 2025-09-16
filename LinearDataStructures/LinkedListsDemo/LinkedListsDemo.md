@@ -5,6 +5,7 @@ A **Linked List** is a linear data structure where elements (called **nodes**) a
 Each node consists of:
 - **Data** → stores the actual value.  
 - **Pointer (next)** → stores the address of the next node.  
+- **Pointer (prev)** → stores the address of the prev node in case of Doubly Linked List.  
 
 Unlike arrays, linked lists do not require a fixed size and can grow or shrink dynamically.
 
