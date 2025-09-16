@@ -172,7 +172,7 @@ public class LinkedListsDemo {
         Collections.reverse(list);
         System.out.println("Reversed LinkedList: " + list); 
 
-        // Clear a node in the LinkedList
+        // Clear the LinkedList
         list.clear();
         System.out.println("After clearing, LinkedList: " + list);
     }

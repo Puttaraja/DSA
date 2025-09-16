@@ -171,6 +171,10 @@ public class DoublyLinkedListsDemo {
         list.remove(Integer.valueOf(30));
         System.out.println("After deleting 30:");
         System.out.println(list);
+        System.out.println("LinkedList contains 20: " + list.contains(20));
+        // Clear the LinkedList
+        list.clear();   
+        System.out.println("After clearing, LinkedList: " + list);
     }
 
     public static void main(String[] args) {
