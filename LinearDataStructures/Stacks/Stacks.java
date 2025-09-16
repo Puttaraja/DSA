@@ -1,6 +1,10 @@
 package LinearDataStructures.Stacks;
 import java.util.Stack;
+import java.util.stream.Collectors;
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Deque;
 
 public class Stacks {
 
@@ -43,6 +47,27 @@ public class Stacks {
         System.out.println("After clearing, is stack empty? " + stack.isEmpty());
     }
 
+    static void convertStackToList(Stack<Integer> stack){
+        List<Integer> list = stack.stream().collect(Collectors.toList());
+        System.out.println("Converted List: " + list);
+    }
+
+    static Deque<Integer> arrayDequeWorksSameAsStack(ArrayList<Integer> arr){
+        Deque<Integer> deque = new ArrayDeque<>();
+        for (Integer integer : arr) {
+            deque.push(integer);     
+        }
+        System.out.println("ArrayDeque as Stack: " + deque);
+        System.out.println("Popped from ArrayDeque: " + deque.pop());
+        System.out.println("After popping, ArrayDeque: " + deque);
+        return deque;
+    }
+
+    static void convertDequeToList(Deque<Integer> deque){
+        List<Integer> list = new ArrayList<>(deque);
+        System.out.println("Converted List from Deque: " + list);
+    }
+
     public static void main(String[] args) {
         ArrayList<Integer> arr = new ArrayList<>();
         arr.add(10);        
@@ -53,6 +78,10 @@ public class Stacks {
         Stack<Integer> stack = createStackFromArrayList(arr);
         System.out.println("Stack: " + stack);
         performBasicOperationsOnStack(stack);
+        stack = createStackFromArrayList(arr);
+        convertStackToList(stack);
+        Deque<Integer> dq = arrayDequeWorksSameAsStack(arr);
+        convertDequeToList(dq);
     }
 
 }

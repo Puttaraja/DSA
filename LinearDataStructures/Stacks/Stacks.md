@@ -85,3 +85,9 @@ It mainly supports two operations:
 ## ✅ Summary
 - **Stack** is essential for problems requiring **reversal, backtracking, expression evaluation, and efficient top-based operations**.  
 - It is simple but extremely powerful when solving **monotonic sequence** problems, **parsing**, and **graph traversals**.  
+
+-----
+
+## Optional
+
+- Use Array Deque which works same as stack
