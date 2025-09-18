@@ -1,4 +1,4 @@
-package LinearDataStructures.Queues;
+package DataStructures.Queues;
 import java.util.ArrayList;
 import java.util.PriorityQueue;
 import java.util.Queue;

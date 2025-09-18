@@ -1,17 +1,19 @@
-package LinearDataStructures.LinkedListsDemo;
+package DataStructures.LinkedListsDemo;
 import java.util.LinkedList;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class LinkedListsDemo {
-    
+public class DoublyLinkedListsDemo {
+
     static class Node {
         int data;
         Node next;
+        Node prev;
 
         Node(int data){
             this.data = data;
             this.next = null;
+            this.prev = null;
         }
 
         Node createList(ArrayList<Integer> arr) {
@@ -19,8 +21,10 @@ public class LinkedListsDemo {
             Node head = new Node(arr.get(0));
             Node current = head;
             for(int i=1; i<arr.size(); i++){
-                current.next = new Node(arr.get(i));
-                current = current.next;
+                Node newNode = new Node(arr.get(i));
+                current.next = newNode;
+                newNode.prev = current;
+                current = newNode;
             }
             return head;
         }
@@ -28,25 +32,26 @@ public class LinkedListsDemo {
         void printList(Node head) {
             Node current = head;
             while(current != null){
-                System.out.print(current.data + " -> ");
+                System.out.print(current.data + " <-> ");
                 current = current.next;
             }
             System.out.println("null");
         }
 
         Node reverseList(Node head) {
-            // Implementation of reversing a linked list
+            // Implementation of reversing a doubly linked list
             Node prev = null, current = head, next = null;
             while(current != null){
                 next = current.next;
                 current.next = prev;
+                current.prev = next;
                 prev = current;
                 current = next;
             }
             return prev;
         }
 
-        // Additional linked list operations
+        // Additional doubly linked list operations
         int length(Node head) {
             int count = 0;
             Node current = head;
@@ -55,7 +60,7 @@ public class LinkedListsDemo {
                 current = current.next;
             }
             return count;
-        }
+        }   
 
         boolean search(Node head, int key) {
             Node current = head;
@@ -68,9 +73,11 @@ public class LinkedListsDemo {
 
         Node insertAtBeginning(Node head, int data) {
             Node newNode = new Node(data);
-            newNode.next = head;
-            head = newNode;
-            return head;
+            if(head != null){
+                newNode.next = head;
+                head.prev = newNode;
+            }
+            return newNode;
         }
 
         void insertAtEnd(Node head, int data) {
@@ -84,6 +91,7 @@ public class LinkedListsDemo {
                 current = current.next;
             }
             current.next = newNode;
+            newNode.prev = current;
         }
 
         void deleteNode(Node head, int key) {
@@ -91,24 +99,29 @@ public class LinkedListsDemo {
             if(head.data == key){
                 Node toDelete = head;
                 head = head.next;
-                toDelete.next = null; 
-                toDelete = null; 
+                if(head != null) head.prev = null;
+                toDelete.next = null;
+                toDelete.prev = null;
+                toDelete = null;
                 return;
             }
             Node current = head;
-            while(current.next != null && current.next.data != key){
+            while(current != null && current.data != key){
                 current = current.next;
             }
-            if(current.next != null){
-                Node toDelete = current.next;
-                current.next = current.next.next;
+            if(current != null){
+                Node toDelete = current;
+                if(current.next != null) current.next.prev = current.prev;
+                if(current.prev != null) current.prev.next = current.next;
                 toDelete.next = null;
+                toDelete.prev = null;
                 toDelete = null;
             }
         }
     }
 
-    static void performBasicOperationsUsingNodeForLinkedList() {
+    static void performBasicOperationsUsingNodeForDoublyLinkedList(){
+        // Implementation of basic operations on doubly linked list
         Node node = new Node(0);
         ArrayList<Integer> arr = new ArrayList<>();
         arr.add(10);        
@@ -118,67 +131,55 @@ public class LinkedListsDemo {
         arr.add(50);
         Node head = node.createList(arr);
         node.printList(head);
-        Node reversedHead = node.reverseList(head);
+        head = node.reverseList(head);
         System.out.println("Reversed List:");
-        node.printList(reversedHead);
-        System.out.println("Length of List: " + node.length(reversedHead));
-        System.out.println("Search for 30: " + node.search(reversedHead, 30));
-        System.out.println("Search for 100: " + node.search(reversedHead, 100));
-        reversedHead = node.insertAtBeginning(reversedHead, 5);
+        node.printList(head);
+        System.out.println("Length: " + node.length(head));
+        System.out.println("Search 30: " + node.search(head, 30));  
+        head = node.insertAtBeginning(head, 5);
         System.out.println("After inserting 5 at beginning:");
-        node.printList(reversedHead);   
-        node.insertAtEnd(reversedHead, 60);
+        node.printList(head);
+        node.insertAtEnd(head, 60);
         System.out.println("After inserting 60 at end:");
-        node.printList(reversedHead);
-        node.deleteNode(reversedHead, 30);
+        node.printList(head);
+        node.deleteNode(head, 30);
         System.out.println("After deleting 30:");
-        node.printList(reversedHead);
+        node.printList(head);
     }
 
-    static void performBasicOperationsUsingJavaLinkedList() {
+    static void performBasicOperationsUsingJavaLinkedList(){
+        // Implementation of basic operations on doubly linked list
         LinkedList<Integer> list = new LinkedList<>();
-
-        // Adding elements
         list.add(10);
         list.add(20);
         list.add(30);
-        System.out.println("\nInitial LinkedList: " + list);
-
-        // Accessing elements
-        System.out.println("Element at index 1: " + list.get(1));
-
-        // Removing an element
-        list.remove(1); // Removes the element at index 1
-        System.out.println("After removing element at index 1: " + list);
-
-        // Inserting an element at a specific position
-        list.add(1, 15); // Inserts 15 at index 1
-        System.out.println("After inserting 15 at index 1: " + list);
-
-        // Traversing the list
-        System.out.print("Traversing the LinkedList: ");
-        for (int num : list) {
-            System.out.print(num + " ");
-        }
-        System.out.println();
-
-        // Size of the LinkedList
-        System.out.println("Size of LinkedList: " + list.size());
-
-        // Check if the list contains a specific element
-        System.out.println("LinkedList contains 20: " + list.contains(20));
-
-        // Reverse the LinkedList
+        list.add(40);
+        list.add(50);
+        System.out.println("Original List:");
+        System.out.println(list);
         Collections.reverse(list);
-        System.out.println("Reversed LinkedList: " + list); 
-
+        System.out.println("Reversed List:");
+        System.out.println(list);
+        System.out.println("Length: " + list.size());
+        System.out.println("Search 30: " + list.contains(30));
+        list.addFirst(5);
+        System.out.println("After inserting 5 at beginning:");
+        System.out.println(list);
+        list.addLast(60);
+        System.out.println("After inserting 60 at end:");
+        System.out.println(list);
+        list.remove(Integer.valueOf(30));
+        System.out.println("After deleting 30:");
+        System.out.println(list);
+        System.out.println("LinkedList contains 20: " + list.contains(20));
         // Clear the LinkedList
-        list.clear();
+        list.clear();   
         System.out.println("After clearing, LinkedList: " + list);
     }
 
     public static void main(String[] args) {
-        performBasicOperationsUsingNodeForLinkedList();
+        performBasicOperationsUsingNodeForDoublyLinkedList();
         performBasicOperationsUsingJavaLinkedList();
     }
+    
 }

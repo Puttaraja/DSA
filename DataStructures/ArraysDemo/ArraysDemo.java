@@ -1,4 +1,4 @@
-package LinearDataStructures.ArraysDemo;
+package DataStructures.ArraysDemo;
 import java.util.ArrayList;
 import java.util.Collections;
 

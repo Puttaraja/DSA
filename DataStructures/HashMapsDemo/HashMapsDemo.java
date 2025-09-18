@@ -1,4 +1,4 @@
-package LinearDataStructures.HashMapsDemo;
+package DataStructures.HashMapsDemo;
 import java.util.HashMap;
 import java.util.HashSet;   
 import java.util.LinkedHashMap;
