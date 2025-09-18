@@ -1,4 +1,4 @@
-package LinearDataStructures.StringsDemo;
+package DataStructures.StringsDemo;
 
 public class StringsDemo {
 

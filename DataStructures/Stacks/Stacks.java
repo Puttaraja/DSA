@@ -1,4 +1,4 @@
-package LinearDataStructures.Stacks;
+package DataStructures.Stacks;
 import java.util.Stack;
 import java.util.stream.Collectors;
 import java.util.ArrayDeque;
