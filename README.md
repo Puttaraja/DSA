@@ -1,6 +1,6 @@
 # 🚀 Java Data Structures & Algorithms (DSA)
 
-This repository contains my implementation and practice of **Data Structures and Algorithms (DSA)** in **Java**.  
+This repository contains implementations and practice of **Data Structures and Algorithms (DSA)** in **Java**.  
 It covers both **linear** and **non-linear** data structures, along with standard DSA problems and operations.
 
 ---
