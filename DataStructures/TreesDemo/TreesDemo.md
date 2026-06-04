@@ -27,6 +27,40 @@ A **Binary Tree** is a special type of tree in which each node has at most **two
 
 ---
 
+## 🌲 Important Terminologies
+
+- Root Node → Topmost node of the tree.
+- Parent Node → A node having children.
+- Child Node → Node connected below a parent.
+- Leaf Node → Node with no children.
+- Sibling Nodes → Nodes sharing the same parent.
+- Edge → Connection between two nodes.
+- Height of Tree → Longest path from root to leaf.
+- Depth of Node → Distance from root to that node.
+- Subtree → Tree formed by a node and its descendants.
+
+---
+
+## DFS Traversals
+
+### Preorder
+Root → Left → Right
+
+### Inorder
+Left → Root → Right
+
+### Postorder
+Left → Right → Root
+
+---
+
+## BFS Traversal
+
+### Level-order Traversal
+Visit nodes level by level using Queue.
+
+---
+
 ## ⏱️ Time Complexities
 
 ### General Tree (Adjacency List Representation)

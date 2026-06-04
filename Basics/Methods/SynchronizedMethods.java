@@ -59,7 +59,7 @@ public class SynchronizedMethods {
         t4.start();
 
         try {
-            t1.join();
+            t1.join(); //join method will clear interrupted exception
             t2.join();
             t3.join();
             t4.join();
