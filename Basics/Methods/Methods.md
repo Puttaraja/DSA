@@ -44,7 +44,7 @@ returnType methodName(parameters) {
 
 - Belong to an object of the class.
 - Must create an object to call them.
-- Creatin methods inside a class without static key word and accessed after creating an object of the class
+- Creating methods inside a class without static key word and accessed after creating an object of the class
 
 ### 5️⃣ Abstract Methods
 
