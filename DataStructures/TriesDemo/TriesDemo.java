@@ -4,6 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 public class TriesDemo {
+
     static class TrieNode {
         boolean isEndOfWord;
         TrieNode[] children = new TrieNode[26];
@@ -165,9 +166,9 @@ public class TriesDemo {
         System.out.println("Checking if trie starts with prefix: " + prefixToSearch);
         boolean starts = root.startsWith(prefixToSearch, root);
         if (starts) {
-            System.out.println("Trie starts with the given prefix.");
+            System.out.println("Trie starts with the given prefix");
         } else {
-            System.out.println("Trie does not start with the given prefix.");
+            System.out.println("Trie does not start with the given prefix");
         }
         String wordToDelete = randomWord();
         System.out.println("Deleting word: " + wordToDelete);

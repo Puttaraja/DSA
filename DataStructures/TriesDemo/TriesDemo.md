@@ -9,7 +9,7 @@ It is mainly used for:
 * Dictionary applications
 * Auto-complete systems
 * Spell checkers
-* Search suggestions
+* Search suggestions   
 * Prefix matching
 
 Unlike HashMap, Trie stores characters one by one.
@@ -17,7 +17,6 @@ Unlike HashMap, Trie stores characters one by one.
 Example:
 
 Words:
-
 apple
 app
 ape
