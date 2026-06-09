@@ -4,7 +4,7 @@ import java.util.Collections;
 
 public class ArraysDemo {
 
-    static void printAnArrayList(ArrayList<Integer> arrayList){
+    public static void printAnArrayList(ArrayList<Integer> arrayList){
         System.out.print("ArrayList elements: ");
         for (int num : arrayList) {
             System.out.print(num + " ");
@@ -185,6 +185,21 @@ public class ArraysDemo {
         arrayListAndEnhancedForLoop();
         basicOperationsOnArrayList();
         performBasicOperationsOnArrayListUsingCollection();
+    }
+
+    static int generateRandomNumber() {
+        return (int) (Math.random() * 100); // Generates a random number between 0 and 99
+    }
+
+    public static ArrayList<Integer> createArrayList() {
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        arrayList.add(generateRandomNumber());
+        arrayList.add(generateRandomNumber());
+        arrayList.add(generateRandomNumber());
+        arrayList.add(generateRandomNumber());
+        arrayList.add(generateRandomNumber());
+        arrayList.add(generateRandomNumber());
+        return arrayList;
     }
 
 }
